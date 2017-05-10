@@ -11,7 +11,7 @@ View(mood1)
 mood2 <- readr::read_csv('data/moods.csv', skip = 2)
 
 # name columns
-mood3 <- readr::read_csv('data/moods.csv', skip = 2, col_names = c('tomato', 'frog', 'dice'))
+mood3 <- readr::read_csv('data/moods.csv', skip = 3, col_names = c('tomato', 'frog', 'dice'))
 
 # define missing values format
 moods <- readr::read_csv('data/moods.csv', skip = 2, na = 'n/a')
