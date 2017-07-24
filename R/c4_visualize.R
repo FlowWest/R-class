@@ -56,7 +56,7 @@ ggplot(data = mpg) +
   geom_smooth(mapping = aes(x = displ, y = hwy))
 
 ggplot(data = mpg) + 
-  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))
+  geom_smooth(mapping = aes(x = displ, y = hwy,color = drv))
 
 # you can set the group aesthetic to a categorical variable to draw multiple objects
 ggplot(data = mpg) +
@@ -118,3 +118,11 @@ ggplot(data = mpg, mapping = aes(x = class, y = hwy)) +
 ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
   geom_boxplot() +
   coord_flip()
+
+
+
+
+
+
+
+

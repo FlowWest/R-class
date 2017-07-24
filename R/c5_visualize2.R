@@ -36,11 +36,12 @@ df <- tibble(
   x = runif(10),
   y = runif(10)
 )
+
 ggplot(df, aes(x, y)) +
   geom_point() +
   labs(
     x = quote(sum(x[i] ^ 2, i == 1, n)),
-    y = quote(alpha + beta + frac(delta, theta))
+    y = quote(alpha + beta + frac(delta, theta)) 
   )
 
 # annotations ------------------------
@@ -111,7 +112,7 @@ ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(colour = class)) +
   geom_smooth(se = FALSE) +
   theme(legend.position = "bottom") +
-  guides(colour = guide_legend(nrow = 1, override.aes = list(size = 4)))
+  guides(colour = guide_legend(nrow = 1, override.aes = list(size = 5)))
 
 #log
 ggplot(diamonds, aes(carat, price)) +
@@ -127,7 +128,7 @@ ggplot(diamonds, aes(carat, price)) +
 
 ggplot(diamonds, aes(carat, price)) +
   geom_point() +
-  scale_y_continuous(label = comma)
+  scale_y_continuous(labels = comma)
 
 # color --------------------------------------
 # nice palletes for discrete data - color brewer http://colorbrewer2.org/ 
@@ -170,7 +171,7 @@ ggplot(df, aes(x, y)) +
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(color = class)) +
   geom_smooth(se = FALSE) +
-  theme_bw()
+  theme_minimal()
 
 # http://ggplot2.tidyverse.org/reference/theme.html
 # customize the theme
