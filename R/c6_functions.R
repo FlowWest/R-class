@@ -12,7 +12,7 @@
 # Ex 1 -----
 # Here I "Create" a function, running the code makes it available for me to use
 add_two <- function(x){
-  return(x)
+  return(x+2)
 }
 
 # Check the environment list, you will see the function listed
