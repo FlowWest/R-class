@@ -121,7 +121,7 @@ stringr::str_extract_all(test, "[0-9]{4}-[0-9]{2}-[0-9]{2}") #both
 # we have what we need, so we place all this code in a function 
 
 #3 Function creation 
-parse_gage_filename <- function(f) {
+parse_gage_file <- function(f) {
   station_id <- stringr::str_sub(f, 1, 4)
   starting_date <- stringr::str_sub(f, 6, 15)
   ending_date <- stringr::str_sub(f, 17, 26)
