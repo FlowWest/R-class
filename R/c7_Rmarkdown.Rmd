@@ -1,0 +1,197 @@
+---
+title: "Introduction to R Markdown"
+author: "Emanuel"
+date: "September 25, 2017"
+output: html_document
+---
+
+The corresponding R Markdown chapter in the R for Data Sience is [here](http://r4ds.had.co.nz/r-markdown.html)
+
+R Markdown provides an unified authoring framework for data science, combining your code, its results,
+and your prose commentary. R Markdown documents are fully reproducible and support dozens of output
+formats, like PDFs, Word files, slideshows, and more.
+
+# The Basics 
+
+1. The very top of the file has a chunk of code surrounded by `---`s, we call this
+the YAML and it lets you apply changes such styling to the document as a whole. Most
+of the time we are only interested in Title, Author, and Date.
+
+2. R code is embedded in the document in chunks sorrounded by ``` and {r} on the top
+set of these.
+
+```{r}
+# this is an example of R code within a document 
+x <- 1:100
+mean(x)
+```
+
+3. All other text, is formatted by a markup language called Markdown. 
+
+4. We compile a RMarkdown document with knitr, in Rstudio click the 'knit' button 
+or use the shortcut `Ctrl-Shift-K`
+
+
+# Markdown Basics
+
+Text formatting. 
+
+We can format text with the following 
+
+```
+*italic* or _italic_ 
+
+**bold** or __bold__
+
+`inline code` 
+
+supercript^2^
+
+$2 + 2 = 4$
+```
+
+*italic* or _italic_
+
+**bold**  or __bold__
+
+a superscript^2^
+
+and inline code `x <- c(1, 2, 3, 4)`
+
+and math $2 + 2 = 4$ (this is not Markdown its Latex and only works if you have a Latex engine)
+
+---------
+
+Headings.
+
+We can add different levels of headings using `#`'s
+
+```
+# 1st Level
+
+## 2nd Level
+
+### 3rd Level
+
+and so on
+```
+
+# First Level
+## Second Level 
+### Third Level
+
+----------
+
+Lists.
+
+Bulleted lists are created with `*`'s
+
+```
+* list item 1
+* list item 2
+* list item 3
+```
+
+* list item 1
+* list item 2
+* list item 3
+
+
+Numbered Lists
+
+```
+1. list item 1
+2. list item 2
+3. list item 3
+```
+
+1. list item 1
+2. list item 2
+3. list item 3
+
+
+--------------
+
+Links and images 
+
+```
+A regular link
+<http://google.com> 
+
+A link annoted with custom text
+[click here for google](http://google.com)
+
+A link with optional text (this time rendering a image)
+![show only when image does not show](https://www.r-project.org/logo/Rlogo.png)
+```
+
+A regular link
+<http://google.com> 
+
+A link annoted with custom text
+[click here for google](http://google.com)
+
+A link with optional text (this time rendering a image)
+![show only when image does not show](https://www.r-project.org/logo/Rlogo.png)
+
+
+--------------------
+
+Tables 
+
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+Use Kable. If you table is a dataframe in R, use `knitr::kable()` to render 
+a nice table
+
+```{r}
+knitr::kable(head(mtcars))
+```
+
+
+# R Chunks
+
+We can customize the R chunks within a document by adding options within the 
+`{r}` of an R chunk. Here are some popular choices
+
+* eval = FALSE prevents code from being evaluated. 
+
+* include = FALSE runs the code, but doesn’t show the code or results in the final document. 
+
+* echo = FALSE prevents code, but not the results from appearing in the finished file. 
+
+* message = FALSE or warning = FALSE prevents messages or warnings from appearing in the finished file.
+
+* results = 'hide' hides printed output; fig.show = 'hide' hides plots.
+
+Other R stuff. 
+
+We can also embed R code in the inline version of code `this inline remember?`.
+We just have to add a little `r` to the start. Here we show the mean of 
+a random sample from rnorm(100) is `r mean(rnorm(100))`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
